@@ -9,66 +9,13 @@
  * Available languages array
  */
 var CookieLanguages = [
-  'bg',
-  'br',
-  'ca',
-  'cs',
-  'da',
-  'de',
-  'el',
   'en',
-  'es',
-  'et',
-  'fi',
-  'fr',
-  'hr',
-  'hu',
-  'it',
-  'nl',
-  'no',
-  'oc',
-  'pl',
-  'pt',
-  'ro',
-  'ru',
-  'se',
-  'sk',
-  'sl',
-  'tr',
-  'uk'
+  'ro'
 ];
 
 var cookieLawStates = [
-  'AT',
-  'BE',
-  'BG',
-  'BR',
-  'CY',
-  'CZ',
-  'DE',
-  'DK',
-  'EE',
-  'EL',
-  'ES',
-  'FI',
-  'FR',
-  'GB',
-  'HR',
-  'HU',
-  'IE',
-  'IT',
-  'LT',
-  'LU',
-  'LV',
-  'MT',
-  'NL',
-  'NO',
-  'PL',
-  'PT',
-  'RO',
-  'SE',
-  'SI',
-  'SK'
+  'EN',
+  'RO'
 ];
 
 
@@ -401,6 +348,11 @@ function setupCookieBar() {
     exdate.setDate(exdate.getDate() + parseInt(exdays));
     var cValue = encodeURI(value) + ((exdays === null) ? '' : '; expires=' + exdate.toUTCString() + ';path=/');
     document.cookie = name + '=' + cValue;
+      // Setează atributul SameSite și Secure în stringul de setare al modulului cookie
+    var i = "SameSite=None; Secure; expires=" + n.toUTCString() + "; path=/";
+    var moduleCookie = e + "=" + encodeURI(t) + (null === o ? "" : "; " + i);
+  
+  document.cookie = moduleCookie;
   }
 
   /**
