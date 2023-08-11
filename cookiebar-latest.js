@@ -352,7 +352,7 @@ function setupCookieBar() {
     var i = "SameSite=None; Secure; expires=" + n.toUTCString() + "; path=/";
     var moduleCookie = e + "=" + encodeURI(t) + (null === o ? "" : "; " + i);
   
-  document.cookie = moduleCookie;
+    document.cookie = moduleCookie;
   }
 
   /**
